@@ -12,7 +12,8 @@ client.login("jdoe", "letmein!").then(d => {
 ```
 ### Client (*opts*)
 Opts might contain:
-* url: the root url for the API. Defaults to 'api.bounty0x.io/v1'
+* url: the root url for the API. Defaults to `https://api.bounty0x.io/v1`
+* credentials: object with credentials
 
 #### Client.login (username, password)
 Logs in using username and password.
@@ -21,9 +22,11 @@ Once the login is done, the session token is stored for future requests.
 ### Client.listBounties ()
 Returns list of bounties.
 ### Client.listSubmissions (id)
-Returns a list of all submissions to a specific bounty made by the user that is logged in.
+Returns a array of all submissions to a specific bounty made by the user that is logged in.
+### Client.bountyInfo (id)
+Returns information about a bounty.
 ### Client.listAllSubmissions ()
-Returns all submissions made by user that is logged in.
+Returns a array with all submissions made by user that is logged in.
 ### Client.submit (id, link, comment)
 Makes a submission, to bounty with id `id`, where the submission link is `link` and the comment is `comment`.
 Returns information about submission.

@@ -6,7 +6,7 @@ function Bounty0xClient(opts = {}){
   let self = {};
   self.opts = opts;
   self.opts.url = self.opts.url || DEFAULT_URL
-  self.credentials = {};
+  self.credentials = self.opts.credentials || {};
   self.skeleton = (url, method = "GET") => {
     return {
       method: method,
@@ -37,9 +37,13 @@ function Bounty0xClient(opts = {}){
     let o = self.skeleton("bounty");
     return request(o);
   }
-  self.listSubmissions = function(id){
+  self.bountyInfo = function(id){
     let o = self.skeleton(`bounty/${id}`);
     return request(o);
+  }
+  self.listSubmissions = function(id){
+    let o = self.skeleton(`bounty/${id}`);
+    return request(o).then(d=>d.submissions);
   }
   self.listAllSubmissions = function(){
     let o = self.skeleton(`profile/${self.credentials.username}`);
