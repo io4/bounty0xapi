@@ -1,6 +1,6 @@
 {
   "name": "bounty0xapi-contrib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A package to interact with the API of bounty0x.io",
   "main": "index.js",
   "scripts": {
