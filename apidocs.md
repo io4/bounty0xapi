@@ -107,3 +107,17 @@ RESPONSE:
 }
 ```  
 * DELETE `/deletesubmission/:id`    
+* POST `/login`
+PARAMETER:
+```
+{
+    string username, // username of username
+    string hash // bcrypt with cost 10, and salt being username padded at the end to have correct size
+}
+```
+RESPONSE:
+```
+{
+    user
+}
+```
