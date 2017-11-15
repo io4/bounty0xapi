@@ -44,3 +44,6 @@ This might be a empty object for a logged out user, or for a logged in user will
 * username: the username
 ### Client.opts
 Options supplied when initializing.
+
+## API Notes
+See `apidocs.md` for documentation about API usage, and responses which are also returned by this client.
